@@ -14,13 +14,16 @@ typedef Listnode *ListnodePtr;
 
 //Prototypes
 void Menu();
+void printList( ListNodePtr currentPtr );
 
 
 int main(void)
 {
     ListnodePtr startPtr = NULL;
     int User_choice;
-    char item;
+    char Cat_Name[20];
+    float weight;
+    char Cat_color[10];
 
     Menu();
     scanf("%d", &User_choice);
@@ -30,6 +33,18 @@ int main(void)
         switch(User_choice){
 
             case 1:
+                printf("\tNEW CAT\n");
+                printf("Enter name: \n");
+                scanf("%s", &Cat_Name);
+                printf("Enter weight in Kg: \n");
+                scanf("%d", &weight);
+                printf("Enter the color/pattern: \n");
+                scanf("%s", &Cat_color);
+                insert(&startPtr, Cat_Name, weight, Cat_color);
+                PrintList(StartPtr);
+                break;
+            
+            case 2:
 
         }
     }
@@ -67,3 +82,4 @@ void Menu(void)
     printf("Print the cat list backwards: (SET 7)\n");
     printf("Exit: (SET 8)\n");
 }
+
